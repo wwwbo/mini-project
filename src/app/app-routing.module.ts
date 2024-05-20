@@ -8,6 +8,11 @@ const routes: Routes = [
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'cms',
+    loadChildren: () =>
+      import('./modules/cms/cms.module').then((m) => m.CmsModule),
+  },
+  {
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full',
